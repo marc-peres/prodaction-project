@@ -7,16 +7,9 @@ module.exports = {
     extends: [
         'plugin:react/recommended',
         'airbnb',
+        'plugin:i18next/recommended',
     ],
     parser: '@typescript-eslint/parser',
-    overrides: [
-        {
-            files: [
-                'src/**/*.ts',
-                'src/**/*.tsx',
-            ],
-        },
-    ],
     parserOptions: {
         ecmaFeatures: {
             jsx: true,
@@ -35,24 +28,21 @@ module.exports = {
         indent: [2, 4],
         'react/jsx-filename-extension': [
             2,
-            { extensions: ['.ts', '.js', '.jsx', '.tsx'] },
-        ],
-        'i18next/no-literal-string': [
-            'error',
-            { markupOnly: true, ignoreAttribute: ['to'] },
+            { extensions: ['.js', '.jsx', '.tsx'] },
         ],
         'import/no-unresolved': 'off',
         'import/prefer-default-export': 'off',
+        'no-unused-vars': 'warn',
         'react/require-default-props': 'off',
         'react/react-in-jsx-scope': 'off',
-        'react/function-component-definition': 'off',
-        'import/extensions': 'off',
-        'no-shadow': 'off',
-        'no-underscore-dangle': 'off',
-        'no-unused-vars': 'warn',
         'react/jsx-props-no-spreading': 'warn',
-        'import/no-extraneous-dependencies': 'warn',
-        'max-len': ['error', { ignoreComments: true }],
+        'react/function-component-definition': 'off',
+        'no-shadow': 'off',
+        'import/extensions': 'off',
+        'import/no-extraneous-dependencies': 'off',
+        'no-underscore-dangle': 'off',
+        'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['to'] }],
+        'max-len': ['error', { ignoreComments: true, code: 130 }],
     },
     globals: {
         __IS_DEV__: true,

@@ -3,19 +3,19 @@
     width: var(--sidebar-width);
     background: var(--inverted-bg-color);
     position: relative;
-    transition: width 0.3s ease;
+    transition: width 0.3s;
 }
 
 .collapsed {
-    width: var(--sidebar-width-collaosed);
+    width: var(--sidebar-width-collapsed);
 }
 
 .switchers {
     position: absolute;
-    width: 100%;
     bottom: 20px;
     display: flex;
     justify-content: center;
+    width: 100%;
 }
 
 .lang {

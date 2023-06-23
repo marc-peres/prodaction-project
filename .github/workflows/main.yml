@@ -1,5 +1,4 @@
 name: linting, testing, building
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on:
   push:
     branches: [ master ]
@@ -7,7 +6,7 @@ on:
     branches: [ master ]
 jobs:
   pipeline:
-    runs-om: ubuntu-latest
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [ 17.x ]
@@ -24,7 +23,7 @@ jobs:
         run: npm run build:prod
       - name: linting typescript
         run: npm run lint:ts
-      - name: linting scss
+      - name: linting css
         run: npm run lint:scss
       - name: unit testing
         run: npm run test:unit

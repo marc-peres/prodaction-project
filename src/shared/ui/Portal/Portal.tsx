@@ -14,15 +14,13 @@ export const Portal = (props: PortalProps) => {
         element = document.body,
     } = props;
 
-    // return createPortal(children, element);
-    const ref = useRef<HTMLBodyElement>();
+    const ref = useRef<HTMLElement>();
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
-        console.log('Portal отработал', document.querySelector('#app'));
-        ref.current = document.querySelector('body') || undefined;
+        ref.current = element || document.querySelector('body') || undefined;
         setMounted(true);
-    }, []);
+    }, [element]);
 
     return mounted && ref.current ? createPortal(children, ref.current) : null;
 };

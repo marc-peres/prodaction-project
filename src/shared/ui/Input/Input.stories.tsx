@@ -1,5 +1,6 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Input } from './Input';
+import React from 'react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Input } from 'shared/ui/Input/Input';
 
 export default {
     title: 'shared/Input',
@@ -11,14 +12,8 @@ export default {
 
 const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />;
 
-export const emptyInput = Template.bind({});
-emptyInput.args = {
-    value: '',
-    label: 'input label',
-};
-
-export const inputWithText = Template.bind({});
-inputWithText.args = {
-    value: 'Text',
-    label: 'input label',
+export const Primary = Template.bind({});
+Primary.args = {
+    placeholder: 'Type text',
+    value: '123123',
 };

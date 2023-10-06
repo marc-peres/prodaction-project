@@ -18,7 +18,7 @@
     margin-left: 20px;
 }
 
-.collapsedBtn {
+.collapseBtn {
     position: absolute;
     right: -32px;
     bottom: 32px;
@@ -39,6 +39,7 @@
 
 .link {
     margin-left: 10px;
+    opacity: 1;
 }
 
 .icon {
@@ -59,7 +60,7 @@
 
     .link {
         opacity: 0;
-        transition: all ease 0.2s;
+        transition: 0.2s opacity;
         width: 0;
     }
 }

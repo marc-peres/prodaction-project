@@ -39,7 +39,6 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
 
     const fileLoader = {
         test: /\.(png|jpe?g|gif|woff2|woff)$/i,
-        type: 'asset/resource',
         use: [
             {
                 loader: 'file-loader',

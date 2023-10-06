@@ -1,6 +1,4 @@
-import {
-    ReactNode, useEffect, useRef, useState,
-} from 'react';
+import { ReactNode } from 'react';
 import { createPortal } from 'react-dom';
 
 interface PortalProps {
@@ -14,13 +12,5 @@ export const Portal = (props: PortalProps) => {
         element = document.body,
     } = props;
 
-    const ref = useRef<HTMLElement>();
-    const [mounted, setMounted] = useState(false);
-
-    useEffect(() => {
-        ref.current = element || document.querySelector('body') || undefined;
-        setMounted(true);
-    }, [element]);
-
-    return mounted && ref.current ? createPortal(children, ref.current) : null;
+    return createPortal(children, element);
 };

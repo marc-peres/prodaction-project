@@ -1,7 +1,9 @@
+import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
+
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
+import { Button, ButtonSize, ButtonTheme } from './Button';
 
 export default {
     title: 'shared/Button',
@@ -63,8 +65,8 @@ BackgroundTheme.args = {
     theme: ButtonTheme.BACKGROUND,
 };
 
-export const BackgroundThemeInverted = Template.bind({});
-BackgroundThemeInverted.args = {
+export const BackgroundInverted = Template.bind({});
+BackgroundInverted.args = {
     children: 'Text',
     theme: ButtonTheme.BACKGROUND_INVERTED,
 };
@@ -74,14 +76,6 @@ Square.args = {
     children: '>',
     theme: ButtonTheme.BACKGROUND_INVERTED,
     square: true,
-};
-
-export const SquareSizeM = Template.bind({});
-SquareSizeM.args = {
-    children: '>',
-    theme: ButtonTheme.BACKGROUND_INVERTED,
-    square: true,
-    size: ButtonSize.M,
 };
 
 export const SquareSizeL = Template.bind({});
@@ -98,4 +92,11 @@ SquareSizeXl.args = {
     theme: ButtonTheme.BACKGROUND_INVERTED,
     square: true,
     size: ButtonSize.XL,
+};
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+    children: '>',
+    theme: ButtonTheme.OUTLINE,
+    disabled: true,
 };
